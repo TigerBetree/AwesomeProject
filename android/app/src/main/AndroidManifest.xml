@@ -1,0 +1,99 @@
+<manifest package="com.awesomeproject"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:versionCode="1"
+          android:versionName="1.0">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="22"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".TestReactActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".CustomReactActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".TextActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".ImageActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".ReactUIActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".DrawerLayoutActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".ScrollViewActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".NativeAPIActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".MovieActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+
+
+        <activity
+            android:name=".CounterActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".InputOutputActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".FlexBoxActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".ReadingActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+
+        <activity
+            android:name=".TestActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                    android:host="test"
+                    android:scheme="awesome"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity"/>
+    </application>
+
+</manifest>

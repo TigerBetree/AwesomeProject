@@ -1,0 +1,21 @@
+{
+  "name": "TestReact",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "avoscloud-sdk": "1.0.0-rc5",
+    "react": "15.1.0",
+    "react-native": "^0.27.1",
+    "react-native-device-info": "^0.9.3",
+    "react-native-drawer-layout": "^1.0.0",
+    "react-native-scrollable-tab-view": "^0.4.4",
+    "react-native-wechat": "^1.4.6",
+    "react-native-wechat-android": "^2.0.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0"
+  }
+}

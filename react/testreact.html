@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../react/react.js"></script>
+    <script src="../react/react-dom.js"></script>
+    <script src="../react/browser.min.js"></script>
+</head>
+<body>
+    <h1>Hello World.</h1>
+
+    <script>
+        document.write("-----------------------------");
+    </script>
+    <div id="example1"></div>
+
+    <script>
+        document.write("-----------------------------");
+    </script>
+    <div id="example2"></div>
+
+    <script>
+        document.write("-----------------------------");
+    </script>
+    <div id="example3"></div>
+
+    <script>
+        document.write("-----------------------------");
+    </script>
+    <div id="example4"></div>
+
+    <script>
+        document.write("-----------------------------");
+    </script>
+    <div id="example5"></div>
+
+    <script>
+        document.write("-----------------------------");
+    </script>
+    <div id="example6"></div>
+
+    <script>
+        document.write("-----------------------------");
+    </script>
+    <div id="example7"></div>
+
+    <script>
+        document.write("++++++++++++++++++++++++++++++.");
+    </script>
+    <div id="example8"></div>
+
+    <script>
+        document.write("++++++++++++++++++++++++++++++.");
+    </script>
+    <div id="example9"></div>
+
+    <script>
+        document.write("++++++++++++++++++++++++++++++.");
+    </script>
+    <div id="example10"></div>
+
+    <script>
+        document.write("++++++++++++++++++++++++++++++.");
+    </script>
+    <div id="example11"></div>
+
+    <script type="text/babel">
+        // example1
+        ReactDOM.render(
+                <h1>Hello React.</h1>,
+                document.getElementById('example1')
+        );
+
+        // example2
+        var names = ['Alice', 'Emily', 'Kate'];
+        ReactDOM.render(
+                <div>{
+                    names.map(function (name) {
+                        return <div>Hello, {name}!</div>
+                    })
+                }</div>,
+                document.getElementById('example2')
+        );
+
+        // example3
+        var arr = [
+                <h1>Hello World</h1>,
+                <h2>React is awesome</h2>,
+        ];
+        ReactDOM.render(
+                <div>{arr}</div>,
+                document.getElementById('example3')
+        );
+
+        // example4
+        var HelloMessage = React.createClass({
+            render: function(){
+                return <h1>Hello {this.props.name}</h1>;
+            }
+        });
+        ReactDOM.render(
+                <HelloMessage name="John"/>,
+                document.getElementById('example4')
+        );
+
+        // example5
+        var NotesList = React.createClass({
+            render: function () {
+                return (
+                        <ol>
+                        {
+                            React.Children.map(this.props.children,
+                            function(child){
+                                return <li>{child}</li>;
+                            }
+                        )
+                        }
+
+                        </ol>);
+            }
+        });
+        ReactDOM.render(
+                <NotesList>
+                    <span>Hello</span>
+                    <span>World</span>
+                </NotesList>,
+                document.getElementById('example5')
+        );
+
+        // example6
+        var data = '123';
+        var MyTitle = React.createClass({
+            propTypes:{
+                title: React.PropTypes.string.isRequired
+            },
+
+            render: function(){
+                return <h1>{this.props.title}</h1>;
+            }
+        });
+        ReactDOM.render(
+                <MyTitle title={data}/>,
+                document.getElementById('example6')
+        );
+
+        // example7
+        var MyComponent = React.createClass({
+            handleClick: function () {
+                this.refs.myTextInput.focus();
+            },
+
+            render: function(){
+                return (
+                        <div>
+                            <input type="text" ref="myTextInput"/>
+                            <input type="button" value="Focus the text input" onClick={this.handleClick}/>
+                        </div>
+                );
+            }
+        });
+        ReactDOM.render(
+            <MyComponent/>,
+            document.getElementById('example7')
+        );
+
+        //example8
+        var LikeButton = React.createClass({
+            getInitialState: function(){
+                return {liked: false};
+            },
+
+            handleClick: function(event) {
+                this.setState({liked: !this.state.liked});
+            },
+
+            render: function(){
+                var text = this.state.liked ? 'like' : 'not like';
+                return (
+                        <p onClick={this.handleClick}>
+                            You {text} this. Click to toggle.
+                        </p>
+                );
+            }
+        });
+        ReactDOM.render(
+                <LikeButton/>,
+                document.getElementById('example8')
+        );
+
+        // example9
+        var Input = React.createClass({
+            getInitialState: function(){
+                return {value: 'hello!'};
+            },
+
+            handleChange: function (event) {
+                this.setState({value: event.target.value});
+            },
+
+            render: function () {
+                var value = this.state.value;
+                return (
+                        <div>
+                              <input type="text" value={value} onChange={this.handleChange}/>
+                              <p>{value}</p>
+                        </div>
+                )
+            }
+        });
+        ReactDOM.render(<Input/>, document.getElementById('example9'));
+
+        // example10
+        var Hello = React.createClass({
+            getInitialState: function () {
+                return {opacity: 1.0}
+            },
+
+            componentDidMount: function () {
+                this.timer = setInterval(function(){
+                    var opacity = this.state.opacity;
+                    opacity -= .05;
+                    if(opacity < 0.1){
+                        opacity = 1.0;
+                    }
+
+                    this.setState({
+                        opacity: opacity
+                    });
+                }.bind(this),100);
+            },
+
+            render: function () {
+                return(
+                    <div style={{opacity: this.state.opacity}}>
+                        Hello {this.props.name}
+                    </div>
+                )
+            }
+        });
+        ReactDOM.render(
+                <Hello name="World"/>,
+                document.getElementById('example10')
+        );
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

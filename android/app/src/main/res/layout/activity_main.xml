@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/bt1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="TestReactActivity"
+                android:textAllCaps="false"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/bt2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="CustomReactActivity"
+                android:textAllCaps="false"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/bt3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="TextActivity"
+                android:textAllCaps="false"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/bt4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="ImageActivity"
+                android:textAllCaps="false"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/bt5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="ReactUIActivity"
+                android:textAllCaps="false"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/bt6"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="DrawerLayoutActivity"
+                android:textAllCaps="false"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/bt7"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="ScrollViewActivity"
+                android:textAllCaps="false"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/bt8"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="NativeAPIActivity"
+                android:textAllCaps="false"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/bt9"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="Counter"
+                android:textAllCaps="false"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/bt10"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="InputOutput"
+                android:textAllCaps="false"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/bt11"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="Movies"
+                android:textAllCaps="false"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/bt12"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="FlexBox"
+                android:textAllCaps="false"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/bt13"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="Reading"
+                android:textAllCaps="false"
+                android:textSize="25dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

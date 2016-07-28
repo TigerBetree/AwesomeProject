@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../react/react.js"></script>
+    <script src="../react/react-dom.js"></script>
+    <script src="../react/browser.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script type="text/babel">
+        var Greeting = React.createClass({
+            getInitialState: function () {
+                return {
+                    name_list: []
+                };
+            },
+
+            render: function () {
+                return(
+                    <div>
+                        <ol>
+                        {
+                            this.state.name_list.map(function (name){
+                                return <li key={name}>Hello {name}</li>;
+                            })
+                        }
+                        </ol>
+                        <input ref="name_input" placeholder="Input a name" type="text"/>
+                        <input type="submit" onClick={this.handleClick}/>
+                    </div>
+                );
+            },
+
+            handleClick: function (event) {
+                var names = this.state.name_list;
+                var input_name = this.refs.name_input.value;
+                names.push(input_name);
+                this.setState({name_list: names});
+                this.refs.name_input.value = "";
+            }
+        });
+        ReactDOM.render(
+             <Greeting/>,
+             document.getElementById('container')
+        );
+    </script>
+</body>
+</html>

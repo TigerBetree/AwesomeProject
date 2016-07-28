@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../react/react.js"></script>
+    <script src="../react/react-dom.js"></script>
+    <script src="../react/browser.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        var GreetingWidget = React.createClass({
+            getInitialState: function(){
+                return {
+                    name_list: []
+                };
+            },
+
+            render: function () {
+                return (
+                    <div>
+                        <NameList name_list={this.state.name_list}/>
+                        <NameForm onNameSubmit={this.handleNameSubmit}/>
+                    </div>
+                );
+            },
+
+            handleNameSubmit: function (name) {
+                var names = this.state.name_list;
+                names.push(name);
+                this.setState({name_list: names});
+            }
+        });
+
+        var NameForm = React.createClass({
+            handleSubmit: function (e) {
+                // 取消事件的默认动作。
+                e.preventDefault();
+                var name = this.refs.name_input.value;
+                if(!name){
+                    return;
+                }
+                this.props.onNameSubmit(name);
+                this.refs.name_input.value = "";
+                return;
+            },
+            render: function () {
+                return (
+                    <form onSubmit={this.handleSubmit}>
+                        <input ref="name_input" placeholder="Input a name." type="text"/>
+                        <input type="submit"/>
+                    </form>
+                );
+            }
+        });
+
+        var NameList = React.createClass({
+            render: function () {
+                return (
+                    <div>
+                        <ol>
+                        {
+                            this.props.name_list.map(function (name){
+                                return <li key={name}>Hello {name}</li>;
+                            })
+                        }
+                        </ol>
+                    </div>
+                );
+            }
+        });
+
+        ReactDOM.render(
+            <GreetingWidget />,
+            document.getElementById('container')
+        );
+    </script>
+</body>
+</html>

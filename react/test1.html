@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../react/react.js"></script>
+    <script src="../react/react-dom.js"></script>
+    <script src="../react/browser.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+
+    <div id="container2"></div>
+
+    <div id="container3"></div>
+
+    <!--<script>-->
+        <!--document.write("-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;");-->
+    <!--</script>-->
+    <div id="container4"></div>
+
+    <script type="text/babel">
+        ReactDOM.render(
+            React.createElement("h1", null, "Hello World."),
+            document.getElementById('container')
+        );
+
+        ReactDOM.render(
+            <div id="greeting">
+                <h1>Hello greeting</h1>
+            </div>,
+            document.getElementById('container2')
+        );
+
+        // container3
+        var Greeting = React.createClass({
+            render: function () {
+                return (
+                    <div id="greeting">
+                        <h1>{this.props.word}</h1>
+                        {
+                            this.props.names.map(function(name){
+                                return <li>Hello, {name}.</li>;
+                            })
+                        }
+                    </div>
+                );
+            }
+        });
+        var names = ["Alice", "Bob", "Cindy"];
+        ReactDOM.render(
+            <Greeting word="Hello Greeting."
+                names={names}/>,
+            document.getElementById('container3')
+        );
+
+        // container4
+    </script>
+</body>
+</html>
